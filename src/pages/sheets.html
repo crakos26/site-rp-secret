@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Comptabilité</title>
+</head>
+<body style="background:black;color:#0f0;font-family:monospace;">
+  <h2>Comptabilité</h2>
+
+  <p>Colle ton lien Google Sheets :</p>
+
+  <input id="link" style="width:300px;" placeholder="https://docs.google.com/...">
+  <button onclick="go()">Ouvrir</button>
+
+  <script>
+    function go() {
+      const link = document.getElementById("link").value;
+      window.open(link, "_blank");
+    }
+  </script>
+</body>
+</html>

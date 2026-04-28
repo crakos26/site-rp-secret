@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Terminal</title>
+</head>
+<body style="background:black;color:#0f0;font-family:monospace;">
+  <div id="term"></div>
+  <input id="input" autofocus>
+
+  <script>
+    const term = document.getElementById("term");
+
+    function print(text) {
+      term.innerHTML += text + "<br>";
+    }
+
+    print(">> SECURE TERMINAL");
+    print(">> type help");
+
+    document.getElementById("input").addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") {
+        return;
+      }
+
+      const cmd = event.target.value;
+      event.target.value = "";
+
+      if (cmd === "help") {
+        print("commands: logs, mission, sheets, clear");
+      } else if (cmd === "logs") {
+        print("[LOG] accès sécurisé");
+        print("[LOG] utilisateur connecté");
+      } else if (cmd === "mission") {
+        print("Mission: surveiller la zone portuaire");
+      } else if (cmd === "sheets") {
+        window.location.href = "/pages/sheets.html";
+      } else if (cmd === "clear") {
+        term.innerHTML = "";
+      } else {
+        print("commande inconnue");
+      }
+    });
+  </script>
+</body>
+</html>
