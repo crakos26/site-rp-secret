@@ -1,0 +1,4 @@
+{
+  "admin": { "password": "poisson" },
+  "agent": { "password": "1234" }
+}
